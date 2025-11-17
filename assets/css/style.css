@@ -199,15 +199,21 @@ img, video {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    align-items: center;
+    align-items: stretch;
 }
 
 .hero .btn {
     font-size: 1rem;
     padding: 12px 24px;
     border-radius: 8px;
-    min-width: 200px;
+    width: 100%;
     text-align: center;
+}
+
+.about-preview .btn {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
 }
 
 .video-wrapper {
@@ -342,13 +348,13 @@ button,
 }
 
 .btn-outline-primary {
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
 }
 
 .btn-outline-primary:hover {
-    background-color: var(--primary-color);
+    background-color: #1b8f44;
     color: #fff;
 }
 
@@ -1174,6 +1180,18 @@ button,
     
     .hero-buttons {
         justify-content: flex-start;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .hero .btn {
+        width: auto;
+        min-width: 200px;
+    }
+    
+    .about-preview .btn {
+        width: auto;
     }
     
     .video-wrapper {
