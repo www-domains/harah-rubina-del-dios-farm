@@ -1,4 +1,10 @@
-$(document).ready(function() {
+(function() {
+    if (typeof window.jQuery === 'undefined') {
+        console.warn('jQuery is not loaded. Skipping jQuery-dependent UI enhancements.');
+        return;
+    }
+
+    $(document).ready(function() {
     // Handle active state in navigation
     $('.nav-link').on('click', function() {
         $('.nav-link').removeClass('active');
@@ -167,7 +173,7 @@ $(document).ready(function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
-});
+})();
 
 // Theme Toggle Functionality
 function setTheme(themeName) {
