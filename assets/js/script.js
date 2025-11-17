@@ -173,6 +173,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+    });
 })();
 
 // Theme Toggle Functionality
@@ -229,26 +230,45 @@ function initializeTheme() {
     updateThemeIcon();
 }
 
+function attachThemeToggleHandlers() {
+    const themeButtons = document.querySelectorAll('.theme-toggle');
+    if (!themeButtons.length) return;
+
+    themeButtons.forEach(button => {
+        button.removeEventListener('click', themeButtonHandler);
+        button.addEventListener('click', themeButtonHandler);
+    });
+}
+
+function themeButtonHandler(event) {
+    event.preventDefault();
+    toggleTheme();
+    updateThemeIcon();
+}
+
 // Initialize theme immediately
 initializeTheme();
+attachThemeToggleHandlers();
 
 // Also initialize when DOM is ready (works for both jQuery and vanilla JS)
 document.addEventListener('DOMContentLoaded', function() {
     initializeTheme();
-    
-    // Add click handlers to theme toggle buttons
-    const themeButtons = document.querySelectorAll('.theme-toggle');
-    themeButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            toggleTheme();
-            updateThemeIcon();
-        });
-    });
+    attachThemeToggleHandlers();
 });
 
 // For pages with jQuery, also run on jQuery ready
 if (typeof $ !== 'undefined') {
     $(document).ready(function() {
         initializeTheme();
+        attachThemeToggleHandlers();
+    });
+}
+
+// Register service worker for PWA support
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker
+            .register('/service-worker.js')
+            .catch(err => console.error('Service worker registration failed:', err));
     });
 }
