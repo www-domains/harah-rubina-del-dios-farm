@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="manifest" href="/manifest.json">
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
 </head>
@@ -39,6 +38,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="farm-view.html">Farm View</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="about.html">About</a>
@@ -347,6 +349,7 @@
                         <li><a href="services.html">Our Services</a></li>
                         <li><a href="menu.html">Food Menu</a></li>
                         <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="farm-view.html">Farm View</a></li>
                         <li><a href="blog.html">Latest Updates</a></li>
                         <li><a href="contact.html">Visit Us</a></li>
                     </ul>
@@ -371,43 +374,9 @@
         </div>
     </footer>
 
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
     <button id="backToTop" class="back-to-top" aria-label="Back to top">
         <i class="bi bi-arrow-up"></i>
     </button>
-
-    <!-- Floating Chatbot -->
-    <div class="chatbot">
-        <button class="chatbot-toggler">
-            <i class="bi bi-chat-dots-fill"></i>
-            <i class="bi bi-x-lg"></i>
-        </button>
-        <div class="chatbot-box">
-            <header>
-                <h2>Harah Farm Assistant</h2>
-                <p>Hi! How can I help you today?</p>
-            </header>
-            <div class="chatbot-messages">
-                <div class="default-message">
-                    <p>Welcome to Harah Rubina Del Dios Farm! Feel free to ask me about:</p>
-                    <ul>
-                        <li>Our services and facilities</li>
-                        <li>Location and directions</li>
-                        <li>Opening hours</li>
-                        <li>Menu and food services</li>
-                        <li>Farm tours and activities</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="chat-input">
-                <textarea placeholder="Enter your message..." required></textarea>
-                <button class="send-btn">
-                    <i class="bi bi-send-fill"></i>
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- Hidden Background Music Player -->
     <audio id="bg-music" src="hrddfarm.mp3" autoplay loop></audio>

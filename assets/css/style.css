@@ -640,32 +640,6 @@ button,
     box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
-.theme-toggle {
-    position: fixed !important;
-    bottom: 75px !important;
-    right: 15px !important;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 1060;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.theme-toggle:hover {
-    background-color: var(--secondary-color);
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-
 /* Enhanced Floating Chatbot Styles */
 .chatbot {
     position: fixed !important;
@@ -1267,14 +1241,6 @@ button,
         font-size: 1.2rem;
     }
     
-    .theme-toggle {
-        bottom: 85px !important;
-        right: 20px !important;
-        width: 45px;
-        height: 45px;
-        font-size: 1.2rem;
-    }
-    
     .chatbot {
         bottom: 85px;
         right: 20px;
@@ -1364,7 +1330,6 @@ button,
     .navbar,
     .fixed-buttons,
     .chatbot,
-    .theme-toggle,
     .back-to-top {
         display: none !important;
     }
@@ -1579,11 +1544,6 @@ button:focus-visible,
     
     .chatbot-toggler {
         bottom: 20px !important;
-        right: 20px !important;
-    }
-    
-    .theme-toggle {
-        bottom: 75px !important;
         right: 20px !important;
     }
     
