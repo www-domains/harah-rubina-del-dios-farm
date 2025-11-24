@@ -17,6 +17,204 @@
     <link rel="stylesheet" href="assets/css/menu.css">
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <!-- Enhanced Menu Styles -->
+    <style>
+        /* Page Header Enhancements */
+        .page-header {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 50%, #ffffff 100%);
+            position: relative;
+            padding: 3rem 0 2.5rem !important;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="%234CAF50" opacity="0.1"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .header-decoration {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(76, 175, 80, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        /* Stat Cards */
+        .stat-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(76, 175, 80, 0.1) !important;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.15) !important;
+            border-color: rgba(76, 175, 80, 0.3) !important;
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Menu Intro Enhancements */
+        .menu-intro {
+            padding: 4rem 0;
+            background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+        }
+        
+        .menu-intro h2 {
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .menu-intro p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .menu-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            background: #e8f5e9;
+            transform: translateX(5px);
+        }
+        
+        .feature-item i {
+            color: #4CAF50;
+            font-size: 1.25rem;
+        }
+        
+        .feature-item span {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        
+        .menu-intro img {
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-intro img:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Menu Highlights Section */
+        .menu-highlights {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 4rem 0;
+        }
+        
+        .highlight-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            border-top: 4px solid #4CAF50;
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(76, 175, 80, 0.2);
+        }
+        
+        .highlight-card .icon-wrapper {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+        }
+        
+        .highlight-card .icon-wrapper i {
+            font-size: 2rem;
+            color: #4CAF50;
+        }
+        
+        .highlight-card h4 {
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .highlight-card p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+        
+        /* Animations */
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        .animate-fade-in-delay {
+            animation: fadeIn 0.8s ease-out 0.2s both;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .stat-icon {
+                font-size: 2rem;
+            }
+            
+            .menu-intro {
+                padding: 2rem 0;
+            }
+            
+            .menu-highlights {
+                padding: 2rem 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -66,10 +264,41 @@
     </nav>
 
     <!-- PAGE HEADER: Centered, responsive -->
-    <section class="page-header text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold text-success mb-3">Our Menu</h1>
-            <p class="lead">Discover our delicious selection of food and beverages</p>
+    <section class="page-header text-center position-relative overflow-hidden">
+        <div class="container position-relative">
+            <div class="header-decoration"></div>
+            <h1 class="display-4 fw-bold text-success mb-3 animate-fade-in">Our Menu</h1>
+            <p class="lead mb-4 animate-fade-in-delay">Discover our delicious selection of food and beverages</p>
+            <div class="row g-4 mt-4 justify-content-center">
+                <div class="col-md-6 col-6">
+                    <div class="stat-card border-0 rounded-4 p-4 h-100 shadow-sm">
+                        <div class="stat-icon mb-3">🍽️</div>
+                        <p class="text-muted small mb-1 fw-semibold">Menu categories</p>
+                        <h5 class="mb-0 text-success fw-bold">Main • Drinks • Desserts</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-6">
+                    <div class="stat-card border-0 rounded-4 p-4 h-100 shadow-sm">
+                        <div class="stat-icon mb-3">🌱</div>
+                        <p class="text-muted small mb-1 fw-semibold">Fresh ingredients</p>
+                        <h5 class="mb-0 text-success fw-bold">Locally sourced daily</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-6">
+                    <div class="stat-card border-0 rounded-4 p-4 h-100 shadow-sm">
+                        <div class="stat-icon mb-3">👨‍🍳</div>
+                        <p class="text-muted small mb-1 fw-semibold">Cooking style</p>
+                        <h5 class="mb-0 text-success fw-bold">Homestyle & authentic</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-6">
+                    <div class="stat-card border-0 rounded-4 p-4 h-100 shadow-sm">
+                        <div class="stat-icon mb-3">❤️</div>
+                        <p class="text-muted small mb-1 fw-semibold">Made with</p>
+                        <h5 class="mb-0 text-success fw-bold">Family recipes & love</h5>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -78,25 +307,105 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-12 mb-4 mb-lg-0">
-                    <h2>Our Culinary Journey</h2>
-                    <p>At Harah Rubina Del Dios Farm, we take pride in serving authentic Filipino cuisine made with fresh, locally-sourced ingredients. Our menu reflects the rich culinary heritage of Bukidnon while offering modern twists on classic favorites.</p>
+                    <span class="badge bg-success-subtle text-success mb-3 px-3 py-2 rounded-pill fw-semibold">Our Story</span>
+                    <h2 class="fw-bold mb-4">Our Culinary Journey</h2>
+                    <p class="lead mb-4">At Harah Rubina Del Dios Farm, we take pride in serving authentic Filipino cuisine made with fresh, locally-sourced ingredients. Our menu reflects the rich culinary heritage of Bukidnon while offering modern twists on classic favorites.</p>
+                    <p class="mb-4">Every dish tells a story of tradition, family, and the bountiful harvest of our region. From our farm-fresh vegetables to our signature coffee, each item on our menu is carefully prepared to bring you the authentic taste of Bukidnon.</p>
                     <div class="menu-features">
                         <div class="feature-item">
-                            <i class="bi bi-check-circle"></i>
-                            <span>Fresh Local Ingredients</span>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span class="fw-semibold">Fresh Local Ingredients</span>
                         </div>
                         <div class="feature-item">
-                            <i class="bi bi-check-circle"></i>
-                            <span>Homestyle Cooking</span>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span class="fw-semibold">Homestyle Cooking</span>
                         </div>
                         <div class="feature-item">
-                            <i class="bi bi-check-circle"></i>
-                            <span>Family Recipes</span>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span class="fw-semibold">Family Recipes</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span class="fw-semibold">Made to Order</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-12">
-                    <img src="assets/images/logo.png" alt="Our Kitchen" class="img-fluid rounded">
+                    <div class="position-relative">
+                        <img src="assets/images/logo.png" alt="Our Kitchen" class="img-fluid rounded shadow-lg">
+                        <div class="position-absolute top-0 start-0 m-3">
+                            <span class="badge bg-success px-3 py-2 rounded-pill">
+                                <i class="bi bi-heart-fill me-1"></i> Made with Love
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights -->
+    <section class="menu-highlights">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge bg-success-subtle text-success mb-3 px-3 py-2 rounded-pill fw-semibold">Menu Highlights</span>
+                <h2 class="fw-bold mb-3">What Makes Our Menu Special</h2>
+                <p class="lead text-muted">Experience the best of Filipino cuisine with our carefully curated selection</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="highlight-card">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-cup-hot-fill"></i>
+                        </div>
+                        <h4>Signature Coffee</h4>
+                        <p>Indulge in our freshly brewed Bukidnon coffee, made from locally sourced beans. Each cup is a celebration of our region's rich coffee heritage, served hot or iced to your preference.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="highlight-card">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-egg-fried"></i>
+                        </div>
+                        <h4>Authentic Filipino Dishes</h4>
+                        <p>From classic Adobo to comforting Sinigang, our main dishes are prepared using traditional family recipes passed down through generations, ensuring authentic flavors in every bite.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="highlight-card">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-cake2-fill"></i>
+                        </div>
+                        <h4>Sweet Treats</h4>
+                        <p>End your meal with our delightful desserts like Leche Flan and Halo-Halo. Each dessert is made fresh daily, using the finest ingredients to satisfy your sweet cravings.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="highlight-card">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-basket-fill"></i>
+                        </div>
+                        <h4>Fresh Snacks</h4>
+                        <p>Enjoy our crispy Lumpia and sweet Turon, perfect for sharing or as a quick bite. All snacks are made fresh to order, ensuring maximum flavor and crunch.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="highlight-card">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h4>Family Sets</h4>
+                        <p>Perfect for groups! Our family set meals offer great value with a variety of dishes that can feed 4-6 people. Ideal for celebrations, reunions, or family gatherings.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="highlight-card">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-heart-fill"></i>
+                        </div>
+                        <h4>Custom Orders</h4>
+                        <p>Have special dietary needs or preferences? We're happy to accommodate custom orders. Just let us know in advance, and we'll prepare something special just for you.</p>
+                    </div>
                 </div>
             </div>
         </div>

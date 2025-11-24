@@ -54,7 +54,189 @@
                 height: 300px;
             }
         }
+        
+        /* Modal Styles - Full Screen */
+        #imageModal.modal {
+            padding: 0 !important;
+        }
+        
+        #imageModal.modal.show .modal-dialog {
+            transform: none;
+        }
+        
+        #imageModal .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        #imageModal .modal-dialog {
+            max-width: 100%;
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh; /* Dynamic viewport height for mobile */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: stretch;
+        }
+        
+        #imageModal .modal-content {
+            height: 100%;
+            min-height: 100vh;
+            min-height: 100dvh;
+            border: none;
+            border-radius: 0;
+            background-color: rgba(0, 0, 0, 0.95);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #imageModal .modal-header {
+            background: transparent;
+            color: white;
+            border: none;
+            padding: 1rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        #imageModal .modal-header .modal-title {
+            color: white;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        #imageModal .modal-header .btn-close {
+            filter: invert(1);
+            opacity: 1;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            padding: 0.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+        
+        #imageModal .modal-header .btn-close:hover {
+            opacity: 1;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        #imageModal .modal-body {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            background-color: transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .modal-image-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 1rem 1rem;
+        }
+        
+        #modalImage {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        #imageModal .modal-footer {
+            background: transparent;
+            border: none;
+            padding: 1rem;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        #imageModal .modal-footer .btn {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        #imageModal .modal-footer .btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            color: white;
+        }
+        
+        #imageModal .modal-footer .btn-primary {
+            background-color: rgba(76, 175, 80, 0.8);
+            border-color: rgba(76, 175, 80, 1);
+        }
+        
+        #imageModal .modal-footer .btn-primary:hover {
+            background-color: rgba(76, 175, 80, 1);
+        }
+        
+        /* Mobile specific adjustments */
+        @media (max-width: 767.98px) {
+            .modal-image-container {
+                padding: 3.5rem 0.5rem 0.5rem;
+            }
+            
+            #imageModal .modal-header {
+                padding: 0.75rem;
+            }
+            
+            #imageModal .modal-header .modal-title {
+                font-size: 1rem;
+            }
+            
+            #imageModal .modal-header .btn-close {
+                width: 2rem;
+                height: 2rem;
+                padding: 0.25rem;
+            }
+            
+            #imageModal .modal-footer {
+                padding: 0.75rem;
+                flex-direction: column;
+            }
+            
+            #imageModal .modal-footer .btn {
+                width: 100%;
+                padding: 0.625rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Tablet and Desktop */
+        @media (min-width: 768px) {
+            .modal-image-container {
+                padding: 5rem 2rem 2rem;
+            }
+        }
     </style>
+    
+
+    
 </head>
 <body>
     <!-- Navigation -->
@@ -109,22 +291,28 @@
             <h1 class="display-4 fw-bold text-success mb-3">Photo Gallery</h1>
             <p class="lead">Explore the beauty and activities at our farm through photos</p>
             <div class="row g-3 mt-4 justify-content-center">
-                <div class="col-md-3 col-6">
+                <div class="col-md-6 col-6">
                     <div class="border rounded-4 p-3 h-100">
                         <p class="text-muted small mb-1">Locations captured</p>
                         <h5 class="mb-0 text-success">Café • Fields • Lounges</h5>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
+                <div class="col-md-6 col-6">
                     <div class="border rounded-4 p-3 h-100">
                         <p class="text-muted small mb-1">Best moments</p>
                         <h5 class="mb-0 text-success">Sunrise rides & sunset jams</h5>
                     </div>
                 </div>
-                <div class="col-md-3 col-6">
+                <div class="col-md-6 col-6">
                     <div class="border rounded-4 p-3 h-100">
                         <p class="text-muted small mb-1">Shot by</p>
                         <h5 class="mb-0 text-success">Guests and our team</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-6">
+                    <div class="border rounded-4 p-3 h-100">
+                        <p class="text-muted small mb-1">Gallery updates</p>
+                        <h5 class="mb-0 text-success">New photos added regularly</h5>
                     </div>
                 </div>
             </div>
@@ -135,14 +323,14 @@
     <section class="py-5 bg-light">
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-4 col-12">
+                <div class="col-lg-6 col-md-6 col-12">
                     <div class="p-4 bg-white rounded-4 shadow-sm h-100">
                         <span class="badge bg-success-subtle text-success mb-2">What to Expect</span>
                         <h4>Scenes from Sunrise to Nightfall</h4>
                         <p class="text-muted mb-0">Follow a day in the farm through curated sets: steaming coffee mornings, golden farm tours, lively karaoke nights, and biker pit stops.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-12">
+                <div class="col-lg-6 col-md-6 col-12">
                     <div class="p-4 bg-white rounded-4 shadow-sm h-100">
                         <span class="badge bg-success-subtle text-success mb-2">Bring Your Camera</span>
                         <h4>Top Photo Spots</h4>
@@ -153,12 +341,20 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-12">
+                <div class="col-lg-6 col-md-6 col-12">
                     <div class="p-4 bg-white rounded-4 shadow-sm h-100">
                         <span class="badge bg-success-subtle text-success mb-2">For Content Creators</span>
                         <h4>Need assistance?</h4>
                         <p class="text-muted">We can help set up lighting, props, and exclusive access for prenups, product shoots, and travel vlogs.</p>
                         <a href="contact.html" class="btn btn-outline-success btn-sm mt-2">Inquire about shoots</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                        <span class="badge bg-success-subtle text-success mb-2">Share Your Memories</span>
+                        <h4>Tag Us on Social Media</h4>
+                        <p class="text-muted mb-3">Love your photos? Share them with us! Tag us on Facebook and Instagram for a chance to be featured on our page.</p>
+                        <a href="https://www.facebook.com/profile.php?id=61555217610211" target="_blank" class="btn btn-outline-success btn-sm mt-2">Visit Our Facebook</a>
                     </div>
                 </div>
             </div>
@@ -277,16 +473,18 @@
 
     <!-- Image Modal -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header border-0">
+                <div class="modal-header">
                     <h5 class="modal-title" id="imageModalLabel">Gallery Image</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-center p-1">
-                    <img src="" alt="Gallery Image" class="img-fluid rounded" id="modalImage">
+                <div class="modal-body">
+                    <div class="modal-image-container">
+                        <img src="" alt="Gallery Image" id="modalImage">
+                    </div>
                 </div>
-                <div class="modal-footer border-0 justify-content-center">
+                <div class="modal-footer">
                     <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Close</button>
                     <a href="https://www.facebook.com/profile.php?id=61555217610211&sk=photos" target="_blank" class="btn btn-primary">
                         📘 See More on Facebook
