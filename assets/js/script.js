@@ -16,22 +16,6 @@
             $(this).toggleClass('active');
         });
 
-        // Back to top button
-        const backToTop = $('#backToTop');
-
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 300) {
-                backToTop.addClass('show');
-            } else {
-                backToTop.removeClass('show');
-            }
-        });
-
-        backToTop.on('click', function (e) {
-            e.preventDefault();
-            $('html, body').animate({ scrollTop: 0 }, 800);
-        });
-
         // Smooth scrolling for anchor links
         $('a[href^="#"]').on('click', function (e) {
             e.preventDefault();
