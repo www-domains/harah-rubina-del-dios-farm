@@ -11,6 +11,199 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <!-- Enhanced Blog Styles -->
+    <style>
+        /* Page Header Enhancements */
+        .page-header {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 50%, #ffffff 100%);
+            position: relative;
+            padding: 3rem 0 2.5rem !important;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="%234CAF50" opacity="0.1"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .header-decoration {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(76, 175, 80, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        /* Stat Cards */
+        .stat-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(76, 175, 80, 0.1) !important;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.15) !important;
+            border-color: rgba(76, 175, 80, 0.3) !important;
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Highlight Cards */
+        .highlight-card {
+            transition: all 0.3s ease;
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(76, 175, 80, 0.2) !important;
+        }
+        
+        /* Blog Post Cards */
+        .blog-post {
+            transition: all 0.3s ease;
+            background: #ffffff;
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .blog-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 16px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+        }
+        
+        .blog-icon {
+            font-size: 2.5rem;
+            display: block;
+        }
+        
+        /* Video Containers */
+        .video-container {
+            transition: all 0.3s ease;
+            border: 3px solid rgba(76, 175, 80, 0.1);
+        }
+        
+        .video-container:hover {
+            border-color: rgba(76, 175, 80, 0.3);
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.2) !important;
+        }
+        
+        /* Sidebar Enhancements */
+        .bg-gradient-success {
+            background: linear-gradient(135deg, #4CAF50 0%, #27ae60 100%) !important;
+        }
+        
+        .hover-lift {
+            transition: all 0.2s ease;
+        }
+        
+        .hover-lift:hover {
+            background-color: #f8f9fa !important;
+            transform: translateX(5px);
+            padding-left: 1.75rem !important;
+        }
+        
+        /* Badge Colors */
+        .bg-purple-subtle {
+            background-color: #f3e5f5 !important;
+        }
+        
+        .text-purple {
+            color: #9c27b0 !important;
+        }
+        
+        /* Animations */
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        .animate-fade-in-delay {
+            animation: fadeIn 0.8s ease-out 0.2s both;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Blog Section Background */
+        .blog-section {
+            background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+        }
+        
+        /* Enhanced Typography */
+        .card-title {
+            line-height: 1.3;
+            color: #2c3e50;
+        }
+        
+        .card-text {
+            color: #555;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .blog-icon-wrapper {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .blog-icon {
+                font-size: 2rem;
+            }
+            
+            .stat-icon {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Enhanced List Group Items */
+        .list-group-item {
+            border-left: 3px solid transparent;
+        }
+        
+        .list-group-item:hover {
+            border-left-color: #4CAF50;
+            background-color: #f8f9fa;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -60,27 +253,31 @@
     </nav>
 
     <!-- Page Header -->
-    <section class="page-header text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold text-success mb-3">Farm Blog</h1>
-            <p class="lead">Stay updated with the latest happenings at our farm</p>
-            <div class="row g-3 mt-4 justify-content-center">
+    <section class="page-header text-center position-relative overflow-hidden">
+        <div class="container position-relative">
+            <div class="header-decoration"></div>
+            <h1 class="display-4 fw-bold text-success mb-3 animate-fade-in">Farm Blog</h1>
+            <p class="lead mb-4 animate-fade-in-delay">Stay updated with the latest happenings at our farm</p>
+            <div class="row g-4 mt-4 justify-content-center">
                 <div class="col-md-3 col-6">
-                    <div class="border rounded-4 p-3 h-100">
-                        <p class="text-muted small mb-1">Latest topics</p>
-                        <h5 class="mb-0 text-success">Upgrades • Events • Stories</h5>
+                    <div class="stat-card border-0 rounded-4 p-4 h-100 shadow-sm">
+                        <div class="stat-icon mb-3">📝</div>
+                        <p class="text-muted small mb-1 fw-semibold">Latest topics</p>
+                        <h5 class="mb-0 text-success fw-bold">Upgrades • Events • Stories</h5>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
-                    <div class="border rounded-4 p-3 h-100">
-                        <p class="text-muted small mb-1">New posts per month</p>
-                        <h5 class="mb-0 text-success">3-5 highlights</h5>
+                    <div class="stat-card border-0 rounded-4 p-4 h-100 shadow-sm">
+                        <div class="stat-icon mb-3">📅</div>
+                        <p class="text-muted small mb-1 fw-semibold">New posts per month</p>
+                        <h5 class="mb-0 text-success fw-bold">3-5 highlights</h5>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
-                    <div class="border rounded-4 p-3 h-100">
-                        <p class="text-muted small mb-1">Follow updates via</p>
-                        <h5 class="mb-0 text-success">Facebook & onsite board</h5>
+                    <div class="stat-card border-0 rounded-4 p-4 h-100 shadow-sm">
+                        <div class="stat-icon mb-3">📱</div>
+                        <p class="text-muted small mb-1 fw-semibold">Follow updates via</p>
+                        <h5 class="mb-0 text-success fw-bold">Facebook & onsite board</h5>
                     </div>
                 </div>
             </div>
@@ -88,33 +285,33 @@
     </section>
 
     <!-- Blog Highlights -->
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-light position-relative">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4 col-12">
-                    <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-                        <span class="badge bg-success-subtle text-success mb-2">Farm Pulse</span>
-                        <h4>See What's New Each Month</h4>
-                        <p class="text-muted mb-0">We capture every renovation, seasonal bloom, and experience rollout so you can plan your visit around the freshest happenings.</p>
+                    <div class="highlight-card p-4 bg-white rounded-4 shadow-sm h-100 border-top border-4 border-success">
+                        <span class="badge bg-success-subtle text-success mb-3 px-3 py-2 rounded-pill fw-semibold">Farm Pulse</span>
+                        <h4 class="fw-bold mb-3">See What's New Each Month</h4>
+                        <p class="text-muted mb-0 lh-lg">We capture every renovation, seasonal bloom, and experience rollout so you can plan your visit around the freshest happenings.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-12">
-                    <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-                        <span class="badge bg-success-subtle text-success mb-2">Categories</span>
-                        <ul class="feature-list">
-                            <li><i class="bi bi-cup-hot"></i> Café & menu additions</li>
-                            <li><i class="bi bi-tree"></i> Farm life and tours</li>
-                            <li><i class="bi bi-music-note-beamed"></i> Events & entertainment</li>
-                            <li><i class="bi bi-bicycle"></i> Rider & outdoor features</li>
+                    <div class="highlight-card p-4 bg-white rounded-4 shadow-sm h-100 border-top border-4 border-success">
+                        <span class="badge bg-success-subtle text-success mb-3 px-3 py-2 rounded-pill fw-semibold">Categories</span>
+                        <ul class="feature-list list-unstyled">
+                            <li class="mb-3"><i class="bi bi-cup-hot text-success me-2"></i> <span class="fw-medium">Café & menu additions</span></li>
+                            <li class="mb-3"><i class="bi bi-tree text-success me-2"></i> <span class="fw-medium">Farm life and tours</span></li>
+                            <li class="mb-3"><i class="bi bi-music-note-beamed text-success me-2"></i> <span class="fw-medium">Events & entertainment</span></li>
+                            <li class="mb-0"><i class="bi bi-bicycle text-success me-2"></i> <span class="fw-medium">Rider & outdoor features</span></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-12">
-                    <div class="p-4 bg-white rounded-4 shadow-sm h-100">
-                        <span class="badge bg-success-subtle text-success mb-2">Share Your Story</span>
-                        <h4>Tell us about your visit</h4>
-                        <p class="text-muted">Send us your photos, ride logs, or family celebrations—we might feature them in future entries.</p>
-                        <a href="contact.html" class="btn btn-outline-success btn-sm mt-2">Submit a story</a>
+                    <div class="highlight-card p-4 bg-white rounded-4 shadow-sm h-100 border-top border-4 border-success">
+                        <span class="badge bg-success-subtle text-success mb-3 px-3 py-2 rounded-pill fw-semibold">Share Your Story</span>
+                        <h4 class="fw-bold mb-3">Tell us about your visit</h4>
+                        <p class="text-muted mb-3 lh-lg">Send us your photos, ride logs, or family celebrations—we might feature them in future entries.</p>
+                        <a href="contact.html" class="btn btn-outline-success btn-sm mt-2 rounded-pill px-4">Submit a story</a>
                     </div>
                 </div>
             </div>
@@ -126,77 +323,93 @@
         <div class="container">
             <div class="row g-4">
                 <!-- Main Blog Content -->
-                <div class="col-lg-8 col-12">
+                <div class="col-12">
                     <!-- Latest Update Post -->
-                    <article class="blog-post card shadow-sm mb-4">
-                        <div class="card-body p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <span class="fs-1 me-3">🏊‍♀️</span>
-                                <div>
-                                    <h2 class="card-title h4 mb-1">New Mini Swimming Pool & Cemented Walkway</h2>
-                                    <small class="text-muted">📅 Latest Update • ⏰ 5 min read</small>
+                    <article class="blog-post card shadow-sm mb-4 border-0 overflow-hidden">
+                        <div class="card-body p-4 p-md-5">
+                            <div class="d-flex align-items-start mb-4">
+                                <div class="blog-icon-wrapper me-3">
+                                    <span class="blog-icon">🏊‍♀️</span>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="badge bg-success-subtle text-success px-3 py-1 rounded-pill">Latest</span>
+                                        <span class="badge bg-primary-subtle text-primary px-3 py-1 rounded-pill">New Feature</span>
+                                    </div>
+                                    <h2 class="card-title h3 mb-2 fw-bold">New Mini Swimming Pool & Cemented Walkway</h2>
+                                    <div class="d-flex flex-wrap align-items-center gap-3 text-muted small mb-3">
+                                        <span><i class="bi bi-calendar3 me-1"></i> Latest Update</span>
+                                        <span><i class="bi bi-clock me-1"></i> 5 min read</span>
+                                    </div>
                                 </div>
                             </div>
-                            <p class="card-text">We're excited to announce our latest additions! Our new mini swimming pool provides a refreshing escape for visitors, while the newly cemented walkway through our grapes farm offers a comfortable and scenic route for tours. These improvements enhance the overall experience for families and tourists visiting our farm.</p>
-                            <div class="d-flex align-items-center justify-content-between mt-3">
-                                <div class="text-muted small">
-                                    <span class="me-3">👁️ 45 views</span>
-                                    <span>💬 3 comments</span>
+                            <p class="card-text lh-lg mb-4">We're excited to announce our latest additions! Our new mini swimming pool provides a refreshing escape for visitors, while the newly cemented walkway through our grapes farm offers a comfortable and scenic route for tours. These improvements enhance the overall experience for families and tourists visiting our farm.</p>
+                            <div class="d-flex align-items-center justify-content-between mt-4 pt-3 border-top">
+                                <div class="text-muted small d-flex gap-3">
+                                    <span><i class="bi bi-eye me-1"></i> 45 views</span>
+                                    <span><i class="bi bi-chat-dots me-1"></i> 3 comments</span>
                                 </div>
-                                
                             </div>
                         </div>
-                                  <!-- Embedded Facebook Video: New Mini Swimming Pool & Cemented Walkway -->
-                    <div class="mb-4 px-3 px-md-0">
-                        <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
-                            <iframe 
-                                src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61555217610211%2Fvideos%2F1925540041321994%2F&show_text=0&width=560" 
-                                style="border:none;overflow:hidden;width:100%;height:100%;" 
-                                scrolling="no" 
-                                frameborder="0" 
-                                allowfullscreen 
-                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                            </iframe>
+                        <!-- Embedded Facebook Video: New Mini Swimming Pool & Cemented Walkway -->
+                        <div class="px-4 pb-4">
+                            <div class="video-container ratio ratio-16x9 rounded-3 shadow-lg overflow-hidden">
+                                <iframe 
+                                    src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61555217610211%2Fvideos%2F1925540041321994%2F&show_text=0&width=560" 
+                                    style="border:none;overflow:hidden;width:100%;height:100%;" 
+                                    scrolling="no" 
+                                    frameborder="0" 
+                                    allowfullscreen 
+                                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                                </iframe>
+                            </div>
                         </div>
-                    </div>
 
-                     <!-- Embedded Facebook Video: Grapes Farm Update -->
-                     <div class="mb-4 px-3 px-md-0">
-                        <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
-                            <iframe 
-                                src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61555217610211%2Fvideos%2F1938066807046846%2F&show_text=0&width=560" 
-                                style="border:none;overflow:hidden;width:100%;height:100%;" 
-                                scrolling="no" 
-                                frameborder="0" 
-                                allowfullscreen 
-                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                            </iframe>
+                        <!-- Embedded Facebook Video: Grapes Farm Update -->
+                        <div class="px-4 pb-4">
+                            <div class="video-container ratio ratio-16x9 rounded-3 shadow-lg overflow-hidden">
+                                <iframe 
+                                    src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61555217610211%2Fvideos%2F1938066807046846%2F&show_text=0&width=560" 
+                                    style="border:none;overflow:hidden;width:100%;height:100%;" 
+                                    scrolling="no" 
+                                    frameborder="0" 
+                                    allowfullscreen 
+                                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                                </iframe>
+                            </div>
                         </div>
-                    </div>
 
                     </article>
 
                         <!-- Mini Gym Update Post -->
-                        <article class="blog-post card shadow-sm mb-4">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center mb-3">
-                                    <span class="fs-1 me-3">🏋️‍♂️</span>
-                                    <div>
-                                        <h2 class="card-title h4 mb-1">Mini Gym Update</h2>
-                                        <small class="text-muted">📅 April 2025 • ⏰ 4 min read</small>
+                        <article class="blog-post card shadow-sm mb-4 border-0 overflow-hidden">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="d-flex align-items-start mb-4">
+                                    <div class="blog-icon-wrapper me-3">
+                                        <span class="blog-icon">🏋️‍♂️</span>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <span class="badge bg-info-subtle text-info px-3 py-1 rounded-pill">Fitness</span>
+                                        </div>
+                                        <h2 class="card-title h3 mb-2 fw-bold">Mini Gym Update</h2>
+                                        <div class="d-flex flex-wrap align-items-center gap-3 text-muted small mb-3">
+                                            <span><i class="bi bi-calendar3 me-1"></i> April 2025</span>
+                                            <span><i class="bi bi-clock me-1"></i> 4 min read</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <p class="card-text">We are excited to introduce our brand new Mini Gym! Now, visitors can enjoy a quick workout or stretch during their stay at the farm. The Mini Gym is equipped with essential fitness equipment and is perfect for health-conscious guests looking to stay active while enjoying the fresh farm air.</p>
-                                <div class="d-flex align-items-center justify-content-between mt-3">
-                                    <div class="text-muted small">
-                                        <span class="me-3">👁️ 40 views</span>
-                                        <span>💬 2 comments</span>
+                                <p class="card-text lh-lg mb-4">We are excited to introduce our brand new Mini Gym! Now, visitors can enjoy a quick workout or stretch during their stay at the farm. The Mini Gym is equipped with essential fitness equipment and is perfect for health-conscious guests looking to stay active while enjoying the fresh farm air.</p>
+                                <div class="d-flex align-items-center justify-content-between mt-4 pt-3 border-top">
+                                    <div class="text-muted small d-flex gap-3">
+                                        <span><i class="bi bi-eye me-1"></i> 40 views</span>
+                                        <span><i class="bi bi-chat-dots me-1"></i> 2 comments</span>
                                     </div>
                                 </div>
                             </div>
                             <!-- Embedded Facebook Video: Mini Gym Update -->
-                            <div class="mb-4 px-3 px-md-0">
-                                <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
+                            <div class="px-4 pb-4">
+                                <div class="video-container ratio ratio-16x9 rounded-3 shadow-lg overflow-hidden">
                                     <iframe 
                                         src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fcita.oponda%2Fvideos%2F691058123580167%2F&show_text=0&width=560" 
                                         style="border:none;overflow:hidden;width:100%;height:100%;" 
@@ -209,161 +422,198 @@
                             </div>
                         </article>
 
-                          <!-- Motorbike Stop Update Post -->
-                    <article class="blog-post card shadow-sm mb-4">
-                        <div class="card-body p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <span class="fs-1 me-3">🏍️</span>
-                                <div>
-                                    <h2 class="card-title h4 mb-1">Motorbike Stop Update</h2>
-                                    <small class="text-muted">📅 Latest Motorbike Update • ⏰ 4 min read</small>
+                        <!-- Motorbike Stop Update Post -->
+                        <article class="blog-post card shadow-sm mb-4 border-0 overflow-hidden">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="d-flex align-items-start mb-4">
+                                    <div class="blog-icon-wrapper me-3">
+                                        <span class="blog-icon">🏍️</span>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <span class="badge bg-warning-subtle text-warning px-3 py-1 rounded-pill">Bikers</span>
+                                        </div>
+                                        <h2 class="card-title h3 mb-2 fw-bold">Motorbike Stop Update</h2>
+                                        <div class="d-flex flex-wrap align-items-center gap-3 text-muted small mb-3">
+                                            <span><i class="bi bi-calendar3 me-1"></i> Latest Motorbike Update</span>
+                                            <span><i class="bi bi-clock me-1"></i> 4 min read</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="card-text lh-lg mb-4">We are thrilled to announce new improvements for our motorbike visitors! Our farm now features a dedicated rest stop for bikers, complete with secure parking, refreshments, and a relaxing atmosphere. Whether you're passing through or planning a group ride, our farm is the perfect pit stop for your journey.</p>
+                                <div class="d-flex align-items-center justify-content-between mt-4 pt-3 border-top">
+                                    <div class="text-muted small d-flex gap-3">
+                                        <span><i class="bi bi-eye me-1"></i> 60 views</span>
+                                        <span><i class="bi bi-chat-dots me-1"></i> 5 comments</span>
+                                    </div>
                                 </div>
                             </div>
-                            <p class="card-text">We are thrilled to announce new improvements for our motorbike visitors! Our farm now features a dedicated rest stop for bikers, complete with secure parking, refreshments, and a relaxing atmosphere. Whether you're passing through or planning a group ride, our farm is the perfect pit stop for your journey.</p>
-                            <div class="d-flex align-items-center justify-content-between mt-3">
-                                <div class="text-muted small">
-                                    <span class="me-3">👁️ 60 views</span>
-                                    <span>💬 5 comments</span>
+                            <!-- Embedded Facebook Video: Motorbike Stop Update -->
+                            <div class="px-4 pb-4">
+                                <div class="video-container ratio ratio-16x9 rounded-3 shadow-lg overflow-hidden">
+                                    <iframe 
+                                        src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61575796677023%2Fvideos%2F2756264317909748%2F&show_text=0&width=560" 
+                                        style="border:none;overflow:hidden;width:100%;height:100%;" 
+                                        scrolling="no" 
+                                        frameborder="0" 
+                                        allowfullscreen 
+                                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                                    </iframe>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Embedded Facebook Video: Motorbike Stop Update -->
-                        <div class="mb-4 px-3 px-md-0">
-                            <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
-                                <iframe 
-                                    src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F61575796677023%2Fvideos%2F2756264317909748%2F&show_text=0&width=560" 
-                                    style="border:none;overflow:hidden;width:100%;height:100%;" 
-                                    scrolling="no" 
-                                    frameborder="0" 
-                                    allowfullscreen 
-                                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                                </iframe>
-                            </div>
-                        </div>
-                    </article>
+                        </article>
           
 
-                    <!-- Coffee Shop Feature -->
-                    <article class="blog-post card shadow-sm mb-4">
-                        <div class="card-body p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <span class="fs-1 me-3">☕</span>
-                                <div>
-                                    <h2 class="card-title h4 mb-1">Coffee Shop Grand Opening</h2>
-                                    <small class="text-muted">📅 March 15, 2024 • ⏰ 3 min read</small>
+                        <!-- Coffee Shop Feature -->
+                        <article class="blog-post card shadow-sm mb-4 border-0 overflow-hidden">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="d-flex align-items-start mb-4">
+                                    <div class="blog-icon-wrapper me-3">
+                                        <span class="blog-icon">☕</span>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <span class="badge bg-danger-subtle text-danger px-3 py-1 rounded-pill">Café</span>
+                                        </div>
+                                        <h2 class="card-title h3 mb-2 fw-bold">Coffee Shop Grand Opening</h2>
+                                        <div class="d-flex flex-wrap align-items-center gap-3 text-muted small mb-3">
+                                            <span><i class="bi bi-calendar3 me-1"></i> March 15, 2024</span>
+                                            <span><i class="bi bi-clock me-1"></i> 3 min read</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="card-text lh-lg mb-4">Our coffee shop is now open! Serving freshly brewed coffee made from locally sourced beans, we offer a cozy atmosphere perfect for relaxation. Whether you're taking a break from your farm tour or just stopping by, our coffee shop provides the perfect spot to unwind.</p>
+                                <div class="d-flex align-items-center justify-content-between mt-4 pt-3 border-top">
+                                    <div class="text-muted small d-flex gap-3">
+                                        <span><i class="bi bi-eye me-1"></i> 128 views</span>
+                                        <span><i class="bi bi-chat-dots me-1"></i> 8 comments</span>
+                                    </div>
                                 </div>
                             </div>
-                            <p class="card-text">Our coffee shop is now open! Serving freshly brewed coffee made from locally sourced beans, we offer a cozy atmosphere perfect for relaxation. Whether you're taking a break from your farm tour or just stopping by, our coffee shop provides the perfect spot to unwind.</p>
-                            <div class="d-flex align-items-center justify-content-between mt-3">
-                                <div class="text-muted small">
-                                    <span class="me-3">👁️ 128 views</span>
-                                    <span>💬 8 comments</span>
+                        </article>
+
+                        <!-- Entertainment Zone -->
+                        <article class="blog-post card shadow-sm mb-4 border-0 overflow-hidden">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="d-flex align-items-start mb-4">
+                                    <div class="blog-icon-wrapper me-3">
+                                        <span class="blog-icon">🎤</span>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <span class="badge bg-purple-subtle text-purple px-3 py-1 rounded-pill">Entertainment</span>
+                                        </div>
+                                        <h2 class="card-title h3 mb-2 fw-bold">Entertainment Zone Now Available</h2>
+                                        <div class="d-flex flex-wrap align-items-center gap-3 text-muted small mb-3">
+                                            <span><i class="bi bi-calendar3 me-1"></i> February 28, 2024</span>
+                                            <span><i class="bi bi-clock me-1"></i> 4 min read</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                
+                                <p class="card-text lh-lg mb-4">Experience fun like never before! Our entertainment zone features karaoke and billiards, perfect for groups and families. Whether you're celebrating a special occasion or just looking for some fun activities, our entertainment area has something for everyone.</p>
+                                <div class="d-flex align-items-center justify-content-between mt-4 pt-3 border-top">
+                                    <div class="text-muted small d-flex gap-3">
+                                        <span><i class="bi bi-eye me-1"></i> 95 views</span>
+                                        <span><i class="bi bi-chat-dots me-1"></i> 6 comments</span>
+                                    </div>
+                                </div>
                             </div>
+                        </article>
+
+                        <!-- Farm Tours -->
+                        <article class="blog-post card shadow-sm mb-4 border-0 overflow-hidden">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="d-flex align-items-start mb-4">
+                                    <div class="blog-icon-wrapper me-3">
+                                        <span class="blog-icon">🚜</span>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <span class="badge bg-success-subtle text-success px-3 py-1 rounded-pill">Tours</span>
+                                        </div>
+                                        <h2 class="card-title h3 mb-2 fw-bold">Guided Farm Tours Available</h2>
+                                        <div class="d-flex flex-wrap align-items-center gap-3 text-muted small mb-3">
+                                            <span><i class="bi bi-calendar3 me-1"></i> February 10, 2024</span>
+                                            <span><i class="bi bi-clock me-1"></i> 6 min read</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="card-text lh-lg mb-4">Discover the beauty of sustainable farming! Our guided tours showcase various crops, farming techniques, and the natural beauty of our farm. Learn about our farming practices while enjoying the peaceful countryside atmosphere.</p>
+                                <div class="d-flex align-items-center justify-content-between mt-4 pt-3 border-top">
+                                    <div class="text-muted small d-flex gap-3">
+                                        <span><i class="bi bi-eye me-1"></i> 156 views</span>
+                                        <span><i class="bi bi-chat-dots me-1"></i> 12 comments</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                </div>
+            </div>
+            
+            <!-- Sidebar - Below Blog Content -->
+            <div class="row g-4 mt-4">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- About Blog -->
+                    <div class="card shadow-sm mb-4 border-0 overflow-hidden h-100">
+                        <div class="card-header bg-gradient-success text-white border-0 py-3">
+                            <h5 class="mb-0 fw-bold d-flex align-items-center">
+                                <i class="bi bi-book me-2"></i> About Our Blog
+                            </h5>
                         </div>
-                    </article>
-
-                    <!-- Entertainment Zone -->
-                    <article class="blog-post card shadow-sm mb-4">
                         <div class="card-body p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <span class="fs-1 me-3">🎤</span>
-                                <div>
-                                    <h2 class="card-title h4 mb-1">Entertainment Zone Now Available</h2>
-                                    <small class="text-muted">📅 February 28, 2024 • ⏰ 4 min read</small>
-                                </div>
-                            </div>
-                            <p class="card-text">Experience fun like never before! Our entertainment zone features karaoke and billiards, perfect for groups and families. Whether you're celebrating a special occasion or just looking for some fun activities, our entertainment area has something for everyone.</p>
-                            <div class="d-flex align-items-center justify-content-between mt-3">
-                                <div class="text-muted small">
-                                    <span class="me-3">👁️ 95 views</span>
-                                    <span>💬 6 comments</span>
-                                </div>
-                                
-                            </div>
+                            <p class="small mb-0 lh-lg">Stay connected with Harah Rubina Del Dios Farm through our blog. We share updates about our services, farm activities, and the beautiful experiences we offer to our visitors.</p>
                         </div>
-                    </article>
-
-                    <!-- Farm Tours -->
-                    <article class="blog-post card shadow-sm mb-4">
-                        <div class="card-body p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <span class="fs-1 me-3">🚜</span>
-                                <div>
-                                    <h2 class="card-title h4 mb-1">Guided Farm Tours Available</h2>
-                                    <small class="text-muted">📅 February 10, 2024 • ⏰ 6 min read</small>
-                                </div>
-                            </div>
-                            <p class="card-text">Discover the beauty of sustainable farming! Our guided tours showcase various crops, farming techniques, and the natural beauty of our farm. Learn about our farming practices while enjoying the peaceful countryside atmosphere.</p>
-                            <div class="d-flex align-items-center justify-content-between mt-3">
-                                <div class="text-muted small">
-                                    <span class="me-3">👁️ 156 views</span>
-                                    <span>💬 12 comments</span>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </article>
-
-      
-
-                  
-                
+                    </div>
                 </div>
 
-                    </article>
-       
-                <!-- Sidebar -->
-                <div class="col-lg-4 col-12">
-                    <div class="sidebar">
-                        <!-- About Blog -->
-                        <div class="card shadow-sm mb-4">
-                            <div class="card-header bg-success text-white">
-                                <h5 class="mb-0">📖 About Our Blog</h5>
-                            </div>
-                            <div class="card-body">
-                                <p class="small mb-0">Stay connected with Harah Rubina Del Dios Farm through our blog. We share updates about our services, farm activities, and the beautiful experiences we offer to our visitors.</p>
-                            </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Quick Links -->
+                    <div class="card shadow-sm mb-4 border-0 overflow-hidden h-100">
+                        <div class="card-header bg-gradient-success text-white border-0 py-3">
+                            <h5 class="mb-0 fw-bold d-flex align-items-center">
+                                <i class="bi bi-link-45deg me-2"></i> Quick Links
+                            </h5>
                         </div>
-
-                        <!-- Quick Links -->
-                        <div class="card shadow-sm mb-4">
-                            <div class="card-header bg-success text-white">
-                                <h5 class="mb-0">🔗 Quick Links</h5>
-                            </div>
-                            <div class="card-body">
-                                <div class="list-group list-group-flush">
-                                    <a href="services.html" class="list-group-item list-group-item-action d-flex align-items-center">
-                                        <span class="me-2">🚀</span> Our Services
-                                    </a>
-                                    <a href="menu.html" class="list-group-item list-group-item-action d-flex align-items-center">
-                                        <span class="me-2">🍽️</span> Food Menu
-                                    </a>
-                                    <a href="gallery.html" class="list-group-item list-group-item-action d-flex align-items-center">
-                                        <span class="me-2">📸</span> Photo Gallery
-                                    </a>
-                                    <a href="farm-view.html" class="list-group-item list-group-item-action d-flex align-items-center">
-                                        <span class="me-2">🌄</span> Farm View
-                                    </a>
-                                    <a href="contact.html" class="list-group-item list-group-item-action d-flex align-items-center">
-                                        <span class="me-2">📞</span> Contact Us
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Follow Us -->
-                        <div class="card shadow-sm">
-                            <div class="card-header bg-success text-white">
-                                <h5 class="mb-0">🌐 Follow Us</h5>
-                            </div>
-                            <div class="card-body text-center">
-                                <a href="https://www.facebook.com/profile.php?id=61555217610211" target="_blank" class="btn btn-primary btn-lg w-100">
-                                    📘 Visit Our Facebook Page
+                        <div class="card-body p-0">
+                            <div class="list-group list-group-flush">
+                                <a href="services.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 px-4 py-3 hover-lift">
+                                    <i class="bi bi-rocket-takeoff text-success me-3 fs-5"></i>
+                                    <span class="fw-medium">Our Services</span>
                                 </a>
-                                <p class="small text-muted mt-3 mb-0">Connect with us on social media for daily updates and photos!</p>
+                                <a href="menu.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 px-4 py-3 hover-lift">
+                                    <i class="bi bi-cup-hot text-success me-3 fs-5"></i>
+                                    <span class="fw-medium">Food Menu</span>
+                                </a>
+                                <a href="gallery.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 px-4 py-3 hover-lift">
+                                    <i class="bi bi-images text-success me-3 fs-5"></i>
+                                    <span class="fw-medium">Photo Gallery</span>
+                                </a>
+                                <a href="farm-view.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 px-4 py-3 hover-lift">
+                                    <i class="bi bi-mountain text-success me-3 fs-5"></i>
+                                    <span class="fw-medium">Farm View</span>
+                                </a>
+                                <a href="contact.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 px-4 py-3 hover-lift">
+                                    <i class="bi bi-telephone text-success me-3 fs-5"></i>
+                                    <span class="fw-medium">Contact Us</span>
+                                </a>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-12">
+                    <!-- Follow Us -->
+                    <div class="card shadow-sm border-0 overflow-hidden h-100">
+                        <div class="card-header bg-gradient-success text-white border-0 py-3">
+                            <h5 class="mb-0 fw-bold d-flex align-items-center">
+                                <i class="bi bi-globe me-2"></i> Follow Us
+                            </h5>
+                        </div>
+                        <div class="card-body text-center p-4">
+                            <a href="https://www.facebook.com/profile.php?id=61555217610211" target="_blank" class="btn btn-primary btn-lg w-100 rounded-pill py-3 fw-semibold">
+                                <i class="bi bi-facebook me-2"></i> Visit Our Facebook Page
+                            </a>
+                            <p class="small text-muted mt-3 mb-0">Connect with us on social media for daily updates and photos!</p>
                         </div>
                     </div>
                 </div>
